@@ -94,11 +94,13 @@ body {
   align-items: center;
   gap: 6px;
   padding: 12px;
-  margin-top: 8px;
+  margin: 8px auto 0; /* Centers the banner */
+  max-width: 1200px;  /* Keeps it aligned with the game grid */
 }
 
 /* ── App (centre column) ───────────────────────────────────────────── */
 #app {
+  grid-column: 2; /* Locks the game to the center column even if ads are blocked */
   padding: 20px 12px 32px;
   display: flex;
   flex-direction: column;
