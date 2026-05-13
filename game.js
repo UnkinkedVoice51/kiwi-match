@@ -34,7 +34,7 @@ const adjacent = (a, b) => {
 
 /* ── Leaderboard (API Integration) ─────────────────────────────────── */
 const lb = (() => {
-  const API_URL = 'http://localhost:3000/api'; // Update to your live URL later
+  const API_URL = 'https://kiwi-match.onrender.com'; // Update to your live URL later
 
   async function fetchScores(mode) {
     try {
