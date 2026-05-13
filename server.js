@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(cors()); // Allows frontend to talk to the backend
@@ -50,6 +51,14 @@ app.post('/api/scores', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// Serve static files from the current directory (HTML, CSS, JS)
+app.use(express.static(__dirname));
+
+// Explicitly send the index.html file for the homepage (and any other unhandled routes)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
