@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiwi Match – Aotearoa Match-3</title>
+<link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div id="page">
+
+  <aside class="ad-col ad-left">
+    <div class="ad-slot ad-vertical" id="ad-left-top">
+      <span class="ad-label">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:160px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="1234567890"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </aside>
+
+  <main id="app">
+
+    <header>
+      <h1>🌿 Kiwi Match</h1>
+      <p class="tagline">Aotearoa Match-3</p>
+    </header>
+
+    <div id="mode-bar">
+      <button class="mode-btn active" data-mode="infinite" onclick="game.setMode('infinite')">♾ Infinite</button>
+      <button class="mode-btn"        data-mode="moves"    onclick="game.setMode('moves')">🎯 30 Moves</button>
+      <button class="mode-btn"        data-mode="time"     onclick="game.setMode('time')">⏱ 90 Sec</button>
+    </div>
+
+    <div id="hud">
+      <div class="hud-block">
+        <span class="hud-label">Score</span>
+        <span class="hud-value" id="score-display">0</span>
+      </div>
+      <div class="hud-block">
+        <span class="hud-label" id="secondary-label">Mode</span>
+        <span class="hud-value" id="secondary-display">∞</span>
+      </div>
+      <button id="restart-btn" onclick="game.restart()">↺ New Game</button>
+      <button id="mute-btn" onclick="this.textContent = game.toggleMute() ? '🔇' : '🔊'" title="Toggle sound">🔊</button>
+    </div>
+
+    <div id="board-wrap">
+      <div id="board"></div>
+      <div id="overlay" class="hidden">
+        <div id="overlay-box">
+          <h2 id="overlay-title">Game Over</h2>
+          <div id="overlay-body"></div>
+          <div id="overlay-best" class="hidden">🏆 New best score!</div>
+          <button onclick="game.restart()">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="leaderboard">
+      <h2 class="lb-heading">🏆 High Scores</h2>
+      <div id="lb-tabs">
+        <button class="lb-tab active" data-lbmode="infinite" onclick="lb.show('infinite')">Infinite</button>
+        <button class="lb-tab"        data-lbmode="moves"    onclick="lb.show('moves')">30 Moves</button>
+        <button class="lb-tab"        data-lbmode="time"     onclick="lb.show('time')">90 Sec</button>
+      </div>
+      <ol id="lb-list"></ol>
+      <button id="lb-clear" onclick="lb.clear()" style="display:none;">Clear scores</button>
+    </section>
+
+    <div id="legend"></div>
+
+  </main>
+
+  <aside class="ad-col ad-right">
+    <div class="ad-slot ad-vertical" id="ad-right-top">
+      <span class="ad-label">Advertisement</span>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:160px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="0987654321"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </aside>
+
+</div>
+
+<div class="ad-slot ad-horizontal" id="ad-bottom">
+  <span class="ad-label">Advertisement</span>
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="1122334455"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<div id="combo-toast" class="hidden"></div>
+
+<script src="sound.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
